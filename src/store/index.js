@@ -1,11 +1,22 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+import orders from '@/store/orders'
+import products from '@/store/products'
+import statuses from '@/store/statuses'
+import modal from '@/store/modal'
+
+Vue.use(Vuex)
 
 export default new Vuex.Store({
+  namespaced: true,
   state: {},
   mutations: {},
   actions: {},
-  modules: {},
-});
+  modules: {
+    orders,
+    products,
+    statuses,
+    modal
+  }
+})

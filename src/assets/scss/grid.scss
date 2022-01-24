@@ -1,0 +1,108 @@
+$screen-base: 320px;
+$screen-extra-small: 380px;
+$screen-small-medium: 480px;
+$screen-small: 576px;
+$screen-medium: 768px;
+$screen-large: 992px;
+$screen-slarge: 1024px;
+$screen-xlarge: 1263px;
+
+@mixin desktop {
+  @media (min-width: #{$screen-large}) {
+    @content;
+  }
+}
+
+@mixin media1263max {
+  @media (max-width: #{$screen-xlarge}) {
+    @content;
+  }
+}
+
+@mixin media1200max {
+  @media (max-width: #{$screen-xlarge}) {
+    @content;
+  }
+}
+
+@mixin media1024min {
+  @media (min-width: #{$screen-slarge}) {
+    @content;
+  }
+}
+
+@mixin media1024min {
+  @media (min-width: #{$screen-slarge}) {
+    @content;
+  }
+}
+
+@mixin media992max {
+  @media (max-width: #{$screen-large}) {
+    @content;
+  }
+}
+
+@mixin media768max {
+  @media (max-width: #{$screen-medium}) {
+    @content;
+  }
+}
+
+@mixin media576max {
+  @media (max-width: #{$screen-small}) {
+    @content;
+  }
+}
+
+@mixin media480max {
+  @media (max-width: #{$screen-small-medium}) {
+    @content;
+  }
+}
+
+@mixin media380max {
+  @media (max-width: #{$screen-extra-small}) {
+    @content;
+  }
+}
+
+@mixin media320max {
+  @media (max-width: #{$screen-base}) {
+    @content;
+  }
+}
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @if ($key == 'media320max') {
+      @include media320max {
+        @content;
+      }
+    } @else if ($key == 'media380max') {
+      @include media380max {
+        @content;
+      }
+    } @else if ($key == 'media480max') {
+      @include media480max {
+        @content;
+      }
+    } @else if ($key == 'media576max') {
+      @include media576max {
+        @content;
+      }
+    } @else if ($key == 'media768max') {
+      @include media768max {
+        @content;
+      }
+    } @else if ($key == 'media992max') {
+      @include media992max {
+        @content;
+      }
+    } @else if ($key == 'media1263max') {
+      @include media1263max {
+        @content;
+      }
+    }
+  }
+}
